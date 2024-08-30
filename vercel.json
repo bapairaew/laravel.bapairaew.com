@@ -4,13 +4,7 @@
             "runtime": "vercel-php@0.7.1"
         }
     },
-    "routes": [
-        {
-            "src": "/(css|js)/(.*)",
-            "dest": "public/$1/$2"
-        },
-        { "src": "/(.*)", "dest": "/api/index.php" }
-    ],
+    "routes": [{ "src": "/(.*)", "dest": "/api/index.php" }],
     "env": {
         "APP_NAME": "laravel",
         "APP_ENV": "production",
