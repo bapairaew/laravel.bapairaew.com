@@ -15,17 +15,18 @@
     <div class="flex container mx-auto sticky">
         <div>
             <div class="text-2xl font-bold not-sr-only">
-                <a class="no-underline" href="/">D:</a>
+                <a class="no-underline" href="/" wire:navigate>D:</a>
             </div>
             <div class="sr-only">
-                <a class="no-underline" href="/">Narudom's website</a>
+                <a class="no-underline" href="/" wire:navigate>Narudom's website</a>
             </div>
         </div>
         <ul class="flex-1 hidden justify-end items-center md:flex gap-4 no-underline text-neutral-500">
             @foreach ($navsReversed as $nav)
                 <li>
                     <a href="{{ $nav['href'] }}"
-                        class="{{ $currentPath === $nav['path'] ? 'text-neutral-900 dark:text-white no-underline' : '' }}">
+                        class="{{ $currentPath === $nav['path'] ? 'text-neutral-900 dark:text-white no-underline' : '' }}"
+                        wire:navigate>
                         {{ $nav['name'] }}
                     </a>
                 </li>
@@ -37,16 +38,17 @@
             </button>
         </div>
     </div>
+    <x-modals.bottom-sheet id="root-navigation-bottom-sheet">
+        <ul class="px-4 py-6 flex flex-col gap-4 text-lg no-underline text-neutral-500">
+            @foreach ($navs as $nav)
+                <li>
+                    <a href="{{ $nav['href'] }}"
+                        class="block {{ $currentPath === $nav['path'] ? 'text-neutral-900 dark:text-white no-underline' : '' }}"
+                        wire:navigate>
+                        {{ $nav['name'] }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </x-modals.bottom-sheet>
 </nav>
-<x-modals.bottom-sheet id="root-navigation-bottom-sheet">
-    <ul class="px-4 py-6 flex flex-col gap-4 text-lg no-underline text-neutral-500">
-        @foreach ($navs as $nav)
-            <li>
-                <a href="{{ $nav['href'] }}"
-                    class="block {{ $currentPath === $nav['path'] ? 'text-neutral-900 dark:text-white no-underline' : '' }}">
-                    {{ $nav['name'] }}
-                </a>
-            </li>
-        @endforeach
-    </ul>
-</x-modals.bottom-sheet>

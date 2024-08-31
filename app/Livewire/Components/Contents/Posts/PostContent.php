@@ -15,6 +15,11 @@ class PostContent extends Component
         $this->mkd = new CustomParsedown();
     }
 
+    public function placeholder()
+    {
+        return view('livewire.components.contents.posts.post-content-loading');
+    }
+
     public function render()
     {
         return view('livewire.components.contents.posts.post-content');
