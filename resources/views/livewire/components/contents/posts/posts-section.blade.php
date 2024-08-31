@@ -7,5 +7,5 @@
             </li>
         @endforeach
     </ul>
-    <a class="w-full text-center block p-4 mt-4" href="/posts">All posts →</a>
+    <a class="w-full text-center block p-4 mt-4" href="/posts" wire:navigate>All posts →</a>
 </section>

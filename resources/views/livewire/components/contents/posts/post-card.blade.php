@@ -1,8 +1,8 @@
 <x-cards.card>
     <div class="p-4 flex flex-col h-full">
-        <livewire:components.cards.card-overlay-anchor :href="url('/posts/' . $post->slug)">
+        <x-cards.card-overlay-anchor :href="url('/posts/' . $post->slug)">
             <h1 class="text-xl font-black pb-4">{{ $post->title }}</h1>
-        </livewire:components.cards.card-overlay-anchor>
+        </x-cards.card-overlay-anchor>
         <p class="pb-4 flex-grow">{{ $post->description ?? '' }}</p>
         <div class="flex justify-between w-full text-neutral-500 text-sm">
             <p>{{ (new DateTime(json_decode('"2024-08-30T00:00:00Z"')))->format('d M Y') }}</p>

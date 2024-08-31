@@ -11,7 +11,7 @@ class PostsSection extends Component
     public function mount()
     {
         $response = file_get_contents('https://data.bapairaew.com/posts');
-        $this->posts = json_decode($response);
+        $this->posts = array_slice(json_decode($response), 0, 6, true);
     }
 
     public function placeholder()
