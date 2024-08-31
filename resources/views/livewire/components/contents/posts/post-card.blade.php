@@ -11,7 +11,7 @@
     </div>
     <x-modals.bottom-sheet>
         <div class='card-dialog-content'>
-            <livewire:post-content :post="$post" lazy />
+            <livewire:components.contents.posts.post-content :post="$post" lazy />
         </div>
     </x-modals.bottom-sheet>
 </x-cards.card>

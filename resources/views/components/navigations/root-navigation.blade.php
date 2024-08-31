@@ -1,9 +1,9 @@
 @php
     $navs = [
-        ['name' => 'About', 'href' => '/'],
-        ['name' => 'Projects', 'href' => '/projects'],
-        ['name' => 'Posts', 'href' => '/posts'],
-        ['name' => 'Photography', 'href' => '/photography'],
+        ['name' => 'About', 'href' => '/', 'path' => '/'],
+        ['name' => 'Projects', 'href' => '/projects', 'path' => 'projects'],
+        ['name' => 'Posts', 'href' => '/posts', 'path' => 'posts'],
+        ['name' => 'Photography', 'href' => '/photography', 'path' => 'photography'],
     ];
     $navsReversed = array_reverse($navs);
     $currentPath = request()->path();
@@ -25,7 +25,7 @@
             @foreach ($navsReversed as $nav)
                 <li>
                     <a href="{{ $nav['href'] }}"
-                        class="{{ $currentPath === $nav['href'] ? 'text-neutral-900 dark:text-white' : '' }}">
+                        class="{{ $currentPath === $nav['path'] ? 'text-neutral-900 dark:text-white no-underline' : '' }}">
                         {{ $nav['name'] }}
                     </a>
                 </li>
@@ -43,7 +43,7 @@
         @foreach ($navs as $nav)
             <li>
                 <a href="{{ $nav['href'] }}"
-                    class="block {{ $currentPath === $nav['href'] ? 'text-neutral-900 dark:text-white' : '' }}">
+                    class="block {{ $currentPath === $nav['path'] ? 'text-neutral-900 dark:text-white no-underline' : '' }}">
                     {{ $nav['name'] }}
                 </a>
             </li>

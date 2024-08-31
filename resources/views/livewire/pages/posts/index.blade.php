@@ -1,12 +1,11 @@
 @push('title')
-    Dom.
+    Posts | Dom.
 @endpush
 @push('description')
-    Some random website.
+    Some (random) thoughts on things.
 @endpush
 
 @pushOnce('styles')
-    @vite('resources/views/components/contents/hero/hero-section.css')
     @vite('resources/views/components/cards/card-overlay-anchor.css')
 @endPushOnce
 
@@ -14,7 +13,6 @@
     @vite('resources/views/components/cards/card-overlay-anchor.js')
 @endPushOnce
 
-<div>
-    <x-contents.hero.hero-section></x-contents.hero.hero-section>
-    <livewire:components.contents.posts.posts-section lazy />
-</div>
+<section class="container mx-auto px-4 pt-4 pb-16">
+    <livewire:components.contents.posts.posts-list :posts="$this->posts" />
+</section>
