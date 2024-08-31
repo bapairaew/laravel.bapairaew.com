@@ -16,7 +16,7 @@ a {
 }
 
 a[target="_blank"]::after {
-    content: " ↗️";
+    content: "\2197";
 }
 
 body {

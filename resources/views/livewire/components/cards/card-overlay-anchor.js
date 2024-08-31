@@ -3,9 +3,10 @@ $(function () {
         e.preventDefault();
         const dialog = $(this).closest(".card").find("dialog")[0];
         dialog.showModal();
+        const preNavigated = window.location.pathname;
         history.pushState(null, "", e.target.href);
         $(dialog).one("close", function () {
-            history.back();
+            history.pushState(null, "", preNavigated);
         });
     });
 });
