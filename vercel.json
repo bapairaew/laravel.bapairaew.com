@@ -24,7 +24,6 @@
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "array",
-        "SESSION_SECURE_COOKIE": "true",
         "NODE_PATH": "node",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",

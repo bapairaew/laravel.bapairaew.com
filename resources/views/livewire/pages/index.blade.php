@@ -1,9 +1,7 @@
-@extends('layouts.app')
-
-@section('content')
+<div>
     <x-contents.hero.hero-section></x-contents.hero.hero-section>
     <livewire:posts-section lazy />
-@endsection
+</div>
 
 @pushOnce('styles')
     @vite('resources/views/components/modals/bottom-sheet.css')

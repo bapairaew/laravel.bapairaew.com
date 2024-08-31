@@ -1,20 +1,20 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Dom.')</title>
-    <meta name="description" content="@yield('description', 'Some random website.')">
+
+    <title>{{ $title ?? 'Dom.' }}</title>
+    <meta name="description" content="{{ $description ?? 'Some random website.' }}">
     @vite('resources/css/app.css')
     @vite('resources/views/components/navigations/root-navigation.css')
     @stack('styles')
-    @livewireStyles
 </head>
 
 <body>
     <x-navigations.root-navigation></x-navigations.root-navigation>
-    @yield('content')
+    {{ $slot }}
     <footer class="flex text-neutral-500 justify-end container mx-auto p-4">
         © @php echo date("Y"); @endphp Dom.
     </footer>
@@ -22,7 +22,6 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     @vite('resources/views/components/navigations/root-navigation.js')
     @stack('scripts')
-    @livewireScripts
 </body>
 
 </html>
