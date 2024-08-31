@@ -3,10 +3,11 @@ export default {
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        "./resources/**/*.vue",
+        "./resources/**/*.css",
+        "./app/Livewire/*.php",
     ],
     theme: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
 };
