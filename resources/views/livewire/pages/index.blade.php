@@ -18,4 +18,5 @@
     <x-contents.hero.hero-section />
     <livewire:components.contents.projects.projects-section lazy />
     <livewire:components.contents.posts.posts-section lazy />
+    <livewire:components.contents.photos.photos-section lazy />
 </div>

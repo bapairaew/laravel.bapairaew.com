@@ -5,7 +5,7 @@
         </x-cards.card-overlay-anchor>
         <p class="pb-4 flex-grow">{{ $post->description ?? '' }}</p>
         <div class="flex justify-between w-full text-neutral-500 text-sm">
-            <p>{{ (new DateTime(json_decode('"2024-08-30T00:00:00Z"')))->format('d M Y') }}</p>
+            <p>{{ (new DateTime(json_decode($post->publishedTime)))->format('d M Y') }}</p>
             <span>Read more →</span>
         </div>
     </div>
