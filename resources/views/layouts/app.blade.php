@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Dom.')</title>
     <meta name="description" content="@yield('description', 'Some random website.')">
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
     @vite('resources/css/app.css')
     @vite('resources/views/components/navigations/root-navigation.css')
     @stack('styles')
+    @livewireStyles
 </head>
 
 <body>
@@ -22,6 +22,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     @vite('resources/views/components/navigations/root-navigation.js')
     @stack('scripts')
+    @livewireScripts
 </body>
 
 </html>
